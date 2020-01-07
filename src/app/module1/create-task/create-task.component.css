@@ -1,9 +1,14 @@
 .createATaskCSS {
-    width: 100%;
+    width: 75%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    background-color: pink;
 }
 .createATaskButtonCSS{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: pink;
 }

@@ -1,5 +1,20 @@
 
-<div *ngFor="let task of TaskList">
+<div *ngFor="let task of TaskList" class="basisStyle" [ngSwitch]="task?.done">
+    <div *ngSwitchCase="true" class="ischecked">
+        <input type="checkbox" *ngIf="task.done" checked="checked" (click)="changeCheckBox(task)" class="chbx1">
+            {{task.action}}   ({{task.done}})
+    </div>
+    <div *ngSwitchCase="false" class="notchecked">
+        <input type="checkbox" *ngIf="!task.done" (click)="changeCheckBox(task)" class="chbx1">
+            {{task.action}}   ({{task.done}})
+    </div>
+</div>
+
+
+
+
+<!--
+<div *ngFor="let task of TaskList" class="basisStyle">
     <input type="checkbox" *ngIf="task.done" checked="checked" (click)="changeCheckBox(task)" class="ischecked"/>
     <input type="checkbox" *ngIf="!task.done" (click)="changeCheckBox(task)" class="notchecked"/>
         {{task.action}}
@@ -7,5 +22,5 @@
 </div>
 
 <p>class ischecked and notchecked do not apply maybe in a div with switchcase??</p>
-<!--
-<task class="done">{{task.action}}</task>-->
+
+-->
