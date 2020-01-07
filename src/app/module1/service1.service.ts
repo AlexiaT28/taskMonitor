@@ -32,9 +32,9 @@ export class Service1Service {
     //this.retrieveTaskList();
     return of(fullListOfTasks)
   }
-  changeCheckBox(id: number) : Observable<task[]> {
-    if (task[id].done){ task[id].done=false}
-    else{task[id].done=true}
+  changeCheckBox(task: task) : Observable<task[]> {
+    if (task.done){ task.done=false}
+    else{task.done=true}
     //this.getTasksValues()
     return of(fullListOfTasks)
   }

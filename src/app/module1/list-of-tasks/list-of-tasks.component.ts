@@ -26,7 +26,7 @@ export class ListOfTasksComponent implements OnInit {
     //this.TaskList = fullListOfTasks;
     this.soloService.retrieveTaskList().subscribe(TaskList => this.TaskList = TaskList)
   }
-  public changeCheckBox(id : number) : void{
-    this.soloService.changeCheckBox(id);
+  public changeCheckBox(task: task) : void{
+    this.soloService.changeCheckBox(task);
   }
 }
