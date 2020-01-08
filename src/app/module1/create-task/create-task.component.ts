@@ -8,7 +8,7 @@ import { Service1Service } from '../service1.service';
   styleUrls: ['./create-task.component.css']
 })
 export class CreateTaskComponent implements OnInit {
-  newtask : task[];
+  //newtask : task[];
   constructor(private soloService : Service1Service) { }
 
   ngOnInit() {

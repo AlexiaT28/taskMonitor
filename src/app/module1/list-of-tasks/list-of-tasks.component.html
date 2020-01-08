@@ -1,4 +1,4 @@
-
+<p>list of task works!</p>
 <div *ngFor="let task of TaskList" class="basisStyle" [ngSwitch]="task?.done">
     <div *ngSwitchCase="true" class="ischecked">
         <input type="checkbox" *ngIf="task.done" checked="checked" (click)="changeCheckBox(task)" class="chbx1">

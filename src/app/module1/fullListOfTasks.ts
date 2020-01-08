@@ -8,3 +8,5 @@ export const fullListOfTasks : task[] = [
     {action : 'appeler Walid Chocoboy', done: true },
     {action : 'assister a la Fete des lumieres a Gaillac', done: false }
 ]
+export const TasksUndone : number = 0;
+export const TasksDone : number = 0;

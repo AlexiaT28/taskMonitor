@@ -10,15 +10,30 @@ import { ListOfTasksComponent } from '../list-of-tasks/list-of-tasks.component';
   styleUrls: ['./evaluate-task.component.css']
 })
 export class EvaluateTaskComponent implements OnInit {
-  public TasksDone : number;
-  public TasksUndone : number;
+  //TaskList : task[]; //public 
+  tasksUndone : number;
+  tasksDone : number;
+  
   constructor(
-    private soloService : Service1Service
-    ) { }
+    private soloService : Service1Service) { }
 
   ngOnInit() {
+    this.getTaskDoneValues();
+    this.getTaskUndoneValues()
   }
-  getTasksValues() : void {
+
+  public getTaskDoneValues() : void {
+    this.soloService.getTaskDoneValues().subscribe(TasksDone => this.tasksDone = TasksDone)
+    console.log(this.tasksDone)
+  }
+  public getTaskUndoneValues() : void {
+    this.soloService.getTaskUndoneValues().subscribe(TasksUndone => this.tasksUndone = TasksUndone)
+    console.log(this.tasksUndone)
+  }
+
+    
+    
+
     //const list = this.soloService.retrieveTaskList()   //NO METHOD to count item in observable<task[]>
     //for (var i=0; i<imax; i++) {
       //if (list[i].done==true){
@@ -31,6 +46,12 @@ export class EvaluateTaskComponent implements OnInit {
     //this.soloService.getTasksValues().subscribe(TasksUndone => TasksUndone = TasksUndone);   
     
     //var imax = ListOfTasksComponent.length     //another try another fail
+
+    /** .subscribe(this.TaskList =>
+      this.TaskList.forEach(task => {
+        if (task.done===true){
+          this.TasksDone+=1;
+        }*/
     
-  }
+  
 }
