@@ -3,6 +3,7 @@ import { task } from '../task';
 import { Service1Service } from '../service1.service';
 import { ActivatedRoute } from '@angular/router';
 import { ListOfTasksComponent } from '../list-of-tasks/list-of-tasks.component';
+import { workValues } from '../workValues';
 
 @Component({
   selector: 'app-evaluate-task',
@@ -13,22 +14,31 @@ export class EvaluateTaskComponent implements OnInit {
   //TaskList : task[]; //public 
   tasksUndone : number;
   tasksDone : number;
+  thisIsATask : workValues;
   
   constructor(
     private soloService : Service1Service) { }
 
   ngOnInit() {
-    this.getTaskDoneValues();
-    this.getTaskUndoneValues()
+    //this.getTaskDoneValues();
+    //this.getTaskUndoneValues();
+    this.getWorkingValues()
   }
-
+////////////////////////////////////REMPLACE PAR GETWORKINGVALUES()
   public getTaskDoneValues() : void {
     this.soloService.getTaskDoneValues().subscribe(TasksDone => this.tasksDone = TasksDone)
-    console.log(this.tasksDone)
+    //console.log(this.tasksDone)
   }
   public getTaskUndoneValues() : void {
     this.soloService.getTaskUndoneValues().subscribe(TasksUndone => this.tasksUndone = TasksUndone)
-    console.log(this.tasksUndone)
+    //console.log(this.tasksUndone)
+  }
+///////////////////////////////////
+  
+  public getWorkingValues() : void {
+    this.soloService.getWorkingValues().subscribe(thisIsATask => this.thisIsATask = thisIsATask)
+    //console.log(this.thisIsATask.TasksDone)
+    //console.log(this.thisIsATask.TasksUndone)
   }
 
     

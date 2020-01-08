@@ -1,4 +1,5 @@
 import { task } from './task';
+import { workValues } from './workValues';
 
 export const fullListOfTasks : task[] = [
     {action : 'preparer repas noel', done: true },
@@ -8,5 +9,4 @@ export const fullListOfTasks : task[] = [
     {action : 'appeler Walid Chocoboy', done: true },
     {action : 'assister a la Fete des lumieres a Gaillac', done: false }
 ]
-export const TasksUndone : number = 0;
-export const TasksDone : number = 0;
+export const fullWorkValues : workValues = {TasksDone: 0, TasksUndone :0}
